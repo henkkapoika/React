@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import CounterButton from "./CounterButton"
 
 const Counter = () => {
 
@@ -9,6 +10,10 @@ const Counter = () => {
 
     // Koodissa kaiken ei tarvitse olla state:a
     // Ainoastaa se, joka halutaan näyttää käyttäjälle ja päivittää
+
+    function reset(){
+        setCount(count => 0)
+    }
 
     function increment(){
         // Count++
@@ -30,8 +35,12 @@ const Counter = () => {
     return (
         <div>
             <h3>Count: {count}</h3>
-            <button onClick={increment}>++</button>
-            <button onClick={decrement}>--</button>
+            {/* Harjoitus, käytetään uutta CounterButton komponenttia */}
+            {/* <button onClick={increment}>++</button>
+            <button onClick={decrement}>--</button> */}
+            <CounterButton onSelect={increment}>+++</CounterButton>
+            <CounterButton onSelect={decrement}>---</CounterButton>
+            <CounterButton onSelect={reset}>000</CounterButton>
         </div>
     )
 }

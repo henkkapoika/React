@@ -17,6 +17,9 @@
 import styles from './Product.module.css'
 
 export default function Product({img, title, description}) {
+
+    console.log("Product EXECUTING ", title)
+
     return (
         <li className={styles.product}>
             <img className={styles.productImage} src={img} alt={title} />
